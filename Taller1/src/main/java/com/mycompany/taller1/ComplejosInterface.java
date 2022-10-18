@@ -10,7 +10,7 @@ package com.mycompany.taller1;
  */
 public interface ComplejosInterface {
     
-    void sumarNumComplejos();
-    void restarNumComplejos();
+    public Complejo sumarNumComplejos(Complejo numero1, Complejo numero2);
+    public Complejo restarNumComplejos(Complejo numero1, Complejo numero2);
     
 }

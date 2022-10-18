@@ -8,10 +8,14 @@ package com.mycompany.taller1;
  *
  * @author mauro
  */
-public class Complejo {
+public class Complejo implements ComplejosInterface {
     
     private float real;
     private float imaginario;
+    private float SumaReales;
+    private float SumaImaginarios;
+    private float RestaReales;
+    private float RestaImaginarios;
     
     public Complejo(float real, float imaginario) {
         this.real = real;
@@ -39,13 +43,26 @@ public class Complejo {
         this.imaginario = imaginario;
     }
     
-    /**
-     *
-     * @return
-     */
+    
     @Override
     public String toString() {
-        return String.format("%.0f + %.0f", getReal(),getImaginario());
+        return String.format("%.0f + %.0fi", getReal(),getImaginario());
+    }
+
+    @Override
+    public Complejo sumarNumComplejos(Complejo numero1, Complejo numero2) {
+        SumaReales  = numero1.real + numero2.real; 
+	SumaImaginarios = numero1.imaginario + numero2.imaginario;
+        
+        return new Complejo(SumaReales, SumaImaginarios);
+    }
+
+    @Override
+    public Complejo restarNumComplejos(Complejo numero1, Complejo numero2) {
+        RestaReales  = numero1.real - numero2.real ; 
+	RestaImaginarios = numero1.imaginario - numero2.imaginario;
+        
+        return new Complejo(RestaReales, RestaImaginarios);
     }
     
 }
